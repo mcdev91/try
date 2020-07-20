@@ -14,11 +14,14 @@ import ListRendering from './components/ListRendering'
 import Stylesheet from './components/Stylesheet'
 import Form from './components/Form'
 import TodoList from './components/TodoApp/TodoList'
+import TodoListTrain from './components/TodoTrain/TodoListTrain'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <TodoListTrain />
+        <hr />
         <TodoList />
         <hr />
         <FunctionalComponent name='NAME as props' description='SHORT DESCRIPTION:'>
