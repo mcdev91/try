@@ -20,7 +20,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <TodoListTrain />
+        {/* <hr />
+        <TodoListTrain /> */}
         <hr />
         <TodoList />
         <hr />

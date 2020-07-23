@@ -1,5 +1,6 @@
 import React from 'react'
 import TodoForm from './TodoForm'
+import Todo from './Todo'
 
 class TodoList extends React.Component {
     constructor(props) {
@@ -16,13 +17,37 @@ class TodoList extends React.Component {
         });
     };
 
+    toggleComplete = (id) => {
+        this.setState({
+            todos: this.state.todos.map(todo => {
+                if (todo.id === id) {
+                    return {
+                        ...todo,
+                        completed: !todo.completed
+                    }
+                } else {
+                    return todo;
+                }
+            })
+        })
+    }
+
     render() {
-        const List = this.state.todos.map(todo => <div key={todo.id}>{todo.text}</div>)
-        console.log(List)
         return (
             <div>
-                <TodoForm onSubmit={this.addTodo} />
-                {List}
+                <TodoForm
+                    onSubmit={this.addTodo}
+
+                />
+                <div>Todos Left: {this.state.todos.filter(todo => !todo.complete).length}</div>
+                <hr />
+                {this.state.todos.map(todo => (
+                    <Todo
+                        key={todo.id}
+                        todo={todo}
+                        toggleComplete={() => this.toggleComplete(todo.id)}
+                    />
+                ))}
             </div>
         )
     }

@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import TodoFormTrain from './TodoFormTrain'
 
-
-
-class TodoListTrain extends Component {
+export class TodoListTrain extends Component {
     constructor(props) {
         super(props)
 
@@ -12,7 +10,6 @@ class TodoListTrain extends Component {
         }
     }
 
-
     addTodo = todo => {
         this.setState({
             todos: [todo, ...this.state.todos]
@@ -20,11 +17,12 @@ class TodoListTrain extends Component {
     }
 
     render() {
-        const List = this.state.todos.map(todo => <div key={todo.id}>{todo.text}</div>)
         return (
-            < div >
+            <div>
                 <TodoFormTrain onSubmit={this.addTodo} />
-                {List}
+                {this.state.todos.map(todo => (
+                    <div key={todo.id}>{todo.text}</div>
+                ))}
             </div>
         )
     }
