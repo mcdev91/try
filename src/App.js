@@ -20,9 +20,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <hr />
-        <TodoListTrain /> */}
         <hr />
+        {/* <TodoListTrain />
+        <hr /> */}
         <TodoList />
         <hr />
         <FunctionalComponent name='NAME as props' description='SHORT DESCRIPTION:'>

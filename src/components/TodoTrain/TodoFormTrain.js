@@ -10,19 +10,21 @@ export class TodoFormTrain extends Component {
         }
     }
 
-    handleCHnage = (event) => {
+    handleChange = event => {
         this.setState({
             text: event.target.value
         })
-        console.log(this.state.text)
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = event => {
         event.preventDefault();
         this.props.onSubmit({
             id: shortid.generate(),
             text: this.state.text,
-            completed: false
+            isCompleted: false
+        })
+        this.setState({
+            text: ''
         })
     }
 
@@ -30,12 +32,12 @@ export class TodoFormTrain extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <input
-                    type='text'
-                    placeholder='T O D O'
-                    onChange={this.handleCHnage}
                     value={this.state.text}
+                    placeholder='T O D O'
+                    onChange={this.handleChange}
+                    type='text'
                 />
-                <button type='submit'>ADD</button>
+                <button type='submit'>Add</button>
             </form>
         )
     }
