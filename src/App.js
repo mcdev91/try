@@ -15,36 +15,37 @@ import Stylesheet from './components/Stylesheet'
 import Form from './components/Form'
 import TodoList from './components/TodoApp/TodoList'
 import TodoListTrain from './components/TodoTrain/TodoListTrain'
+import ClassComLifeCycleMethods from './components/ClassComLifeCycleMethods'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <hr />
-        {/* <TodoListTrain />
-        <hr /> */}
+        <TodoListTrain />
+        <hr />
         <TodoList />
         <hr />
         <FunctionalComponent name='NAME as props' description='SHORT DESCRIPTION:'>
-          {/* <p>
+          <p>
             Children of Functional Component
-          </p> */}
+          </p>
         </FunctionalComponent>
         <hr />
         <FunctionalComponentClickEvent />
         <hr />
         {/* <FunctionalComponent name='user1' anothername='spiderman' />
         <hr />
-        <FunctionalComponent name='user2' anothername='wonderwomen' />
-        <hr /> */}
+        <FunctionalComponent name='user2' anothername='wonderwomen' /> */}
+        <hr />
         <ClassComponent name='USER as props' />
         <hr />
         <ClassComponentClickEvent />
         <hr />
         {/* <ClassComponent name='user1' />
         <hr />
-        <ClassComponent name='user2' />
-        <hr /> */}
+        <ClassComponent name='user2' /> */}
+        <hr />
         <Jsx />
         <hr />
         <ConditionalRendering name='Conditional Rendering' />
@@ -62,6 +63,8 @@ class App extends Component {
         <Stylesheet primary={false} />
         <hr />
         <Form />
+        <hr />
+        <ClassComLifeCycleMethods />
         <hr />
       </div>
     );
