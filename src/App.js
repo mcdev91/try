@@ -16,7 +16,8 @@ import Form from './components/Form'
 import TodoList from './components/TodoApp/TodoList'
 import TodoListTrain from './components/TodoTrain/TodoListTrain'
 import ClassComLifeCycleMethods from './components/ClassComLifeCycleMethods'
-
+import FragmentDemo from './components/FragmentDemo'
+import Table from './components/Table'
 class App extends Component {
   render() {
     return (
@@ -66,6 +67,9 @@ class App extends Component {
         <hr />
         <ClassComLifeCycleMethods />
         <hr />
+        <FragmentDemo />
+        <hr />
+        <Table/>
       </div>
     );
   }

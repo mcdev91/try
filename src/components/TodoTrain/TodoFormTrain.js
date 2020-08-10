@@ -1,31 +1,44 @@
 import React, { Component } from 'react'
 import shortid from 'shortid'
 
-export class TodoFormTrain extends Component {
+/*
+  TodoMVC
+  1. add todo +
+  2. display todos +
+  3. cross off todo +
+  4. show number of active todos
+  5. filter all/active/complete
+  6. delete todo
+  7. delete all complete
+    7.1 only show if atleast one is complete
+  8. button to toggle all on/off
+*/
+
+class TodoFormTrain extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            todo: ''
+            text: ''
         }
     }
 
     handleChange = event => {
         this.setState({
-            todo: event.target.value
+            text: event.target.value
         })
-        console.log(this.state.todo)
+        console.log(this.state.text)
     }
 
     handleSubmit = event => {
         event.preventDefault();
         this.props.onSubmit({
             id: shortid.generate(),
-            todo: this.state.todo,
-            complete: false
+            text: this.state.text,
+            completed: false
         })
         this.setState({
-            todo: ''
+            text: ''
         })
     }
 
@@ -33,12 +46,12 @@ export class TodoFormTrain extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <input
-                    value={this.state.todo}
-                    onChange={this.handleChange}
                     type='text'
-                    placeholder='add todo'
+                    placeholder='todo'
+                    value={this.state.text}
+                    onChange={this.handleChange}
                 />
-                <button type='submit'>ADD</button>
+                <button type='submit'>Add</button>
             </form>
         )
     }
